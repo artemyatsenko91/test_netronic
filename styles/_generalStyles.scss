@@ -1,0 +1,47 @@
+@import './_mixins.scss';
+@import './_media-queries.scss';
+
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.blue_selection {
+    color: #0090FF;
+}
+
+.btn {
+    @include ManropeSemiBold;
+
+    display: block;
+    background-color: #0090FF;
+    border-radius: 60px;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #F1F4F6;
+    will-change: color;
+    transition: background-color .3s ease;
+
+    &_main {
+        margin-top: 32px;
+        width: 254px;
+        height: 55px;
+
+        @include lt-xxs {
+            width: 300px;
+        }
+    }
+
+    &_timer {
+        margin: 52px auto 0 auto;
+        width: 225px;
+        height: 45px;
+    }
+
+    &:hover {
+        background-color: #41acff;
+    }
+}

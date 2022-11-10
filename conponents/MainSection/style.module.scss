@@ -1,0 +1,134 @@
+@import '../../styles/_mixins.scss';
+@import '../../styles/_media-queries.scss';
+
+.main {
+    background-color: #040E18;
+    padding: 40px 15px 133px;
+
+    @include lt-xs {
+        padding: 40px 15px 177px;
+    }
+
+    &__content {
+        position: relative;
+    }
+
+    &__title {
+        @include ManropeBold;
+
+        font-size: 60px;
+        line-height: 1.08em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        max-width: 930px;
+        width: 100%;
+
+        @include lt-md {
+            font-size: 45px;
+        }
+
+        @include lt-xs {
+            font-size: 36px;
+        }
+
+        @include lt-xxs {
+            font-size: 32px;
+        }
+    }
+
+    &__img_block {
+        position: relative;
+        max-width: 1170px;
+        width: 100%;
+        height: 505px;
+        border-radius: 20px;
+        margin-top: 87px;
+        overflow: hidden;
+        z-index: 100;
+
+        @include lt-xxs {
+            margin: 160px 0 0 -15px;
+            width: 100vw;
+            height: 304px;
+            border-radius: 0;
+        }
+    }
+
+    &__descr {
+        @include ManropeMedium;
+
+        font-size: 18px;
+        line-height: 1.3em;
+        letter-spacing: 0.01em;
+        color: #FFFFFF;
+        margin-top: 20px;
+
+        @include lt-xs {
+            font-size: 12px;
+            margin-top: 14px;
+        }
+    }
+
+    &__bg_text {
+        @include ManropeSemiBold;
+
+        width: 818px;
+        z-index: 0;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: .5px white;
+        font-size: 200px;
+
+        @include lt-xs {
+            -webkit-text-stroke: .5px white;
+        }
+    }
+
+    &__bg_toptext {
+        position: absolute;
+        top: 33%;
+        left: 72%;
+
+        @include lt-md {
+            top: 25%;
+            left: 60%;
+            font-size: 150px;
+        }
+
+        @include lt-xs {
+            font-size: 100px;
+        }
+
+        @include lt-xxs {
+            width: 400px;
+            font-size: 80px;
+            top: 44%;
+            left: -42%;
+        }
+    }
+
+    &__bg_bottext {
+        position: absolute;
+        top: 64%;
+        left: -61%;
+
+        @include lt-md {
+            top: 78%;
+            left: -60%;
+            font-size: 150px;
+        }
+
+        @include lt-xs {
+            font-size: 100px;
+            top: 88%;
+            left: -50%;
+        }
+
+        @include lt-xxs {
+            width: 400px;
+            font-size: 80px;
+            top: 92%;
+            left: 50%;
+        }
+    }
+
+}

@@ -1,0 +1,63 @@
+@import '../../../styles/_mixins.scss';
+@import '../../../styles/_media-queries.scss';
+
+.menu {
+    &__body {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: space-between;
+        align-items: center;
+    
+        @include lt-md {
+            display: none;
+        }
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+        color: white;
+    
+        li {
+            margin-right: 45px;
+    
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    &__link {
+        @include ManropeSemiBold;
+    
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.02em;
+        color: #8E8E8E;
+        cursor: pointer;
+        will-change: color;
+        transition: color .3s ease;
+    
+        &:hover {
+            color: white;
+        }
+    
+        &_active {
+            cursor: pointer;
+            color: white;
+            will-change: color;
+            transition: color .3s ease;
+    
+            &:hover {
+                color: #8E8E8E;
+            }
+        }
+    }
+
+    &__phone {
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+}
+
