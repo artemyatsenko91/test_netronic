@@ -87,6 +87,7 @@
         position: absolute;
         top: 33%;
         left: 72%;
+        user-select: none;
 
         @include lt-md {
             top: 25%;
@@ -110,6 +111,7 @@
         position: absolute;
         top: 64%;
         left: -61%;
+        user-select: none;
 
         @include lt-md {
             top: 78%;

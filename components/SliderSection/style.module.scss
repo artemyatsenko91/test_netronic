@@ -10,10 +10,15 @@
         padding: 50px 20px;
     }
 
+    &__kit {
+        padding: 0 20px;
+    }
+
     &__image {
         position: relative;
         height: 432px;
         border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
 
         @include lt-xxs {
             height: 300px;
@@ -56,7 +61,7 @@
     }
 
     &__set_info {
-        padding: 40px;
+        padding: 40px 0 118px 40px;
         background: #FFFFFF;
         position: relative;
         border-radius: 0px 0px 20px 20px;
@@ -125,190 +130,4 @@
             line-height: 1.6em;
         }
     }
-
-    &__controls {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 40px;
-
-        @include lt-lg {
-            justify-content: space-between;
-        }
-    }
-
-    &__dots {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 49px;
-        height: 19px;
-        background: #EFEFEF;
-        border-radius: 30px;
-    }
-
-    .dot {
-        width: 7px;
-        height: 7px;
-        background: #C4C4C4;
-        margin-right: 14px;
-        border-radius: 100px;
-        cursor: pointer;
-
-        &_active {
-            background: #0090FF;
-        }
-
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    .arrow_left {
-        position: absolute;
-        top: -30%;
-        left: -87px;
-        cursor: pointer;
-        color: #C4C4C4;
-        font-size: 50px;
-        will-change: color;
-        transition: color .3s ease;
-
-        @include lt-lg {
-            position: relative;
-            top: 0;
-            left: 0;
-        }
-
-        &:hover {
-            color: white;
-        }
-    }
-
-    .arrow_right {
-        position: absolute;
-        top: -30%;
-        right: -87px;
-        cursor: pointer;
-        color: #C4C4C4;
-        font-size: 50px;
-        will-change: color;
-        transition: color .3s ease;
-
-        @include lt-lg {
-            position: relative;
-            top: 0;
-            left: 0;
-        }
-
-        &:hover {
-            color: white;
-        }
-    }
-}
-
-.slick-slider {
-    position: relative;
-    display: block;
-    box-sizing: border-box;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -ms-touch-action: pan-y;
-    touch-action: pan-y;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.slick-list {
-    position: relative;
-    overflow: hidden;
-    display: block;
-    margin: 0;
-    padding: 0;
-
-    &:focus {
-        outline: none;
-    }
-
-    &.dragging {
-        cursor: pointer;
-        cursor: hand;
-    }
-}
-
-.slick-slider .slick-track,
-.slick-slider .slick-list {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.slick-track {
-    position: relative;
-    left: 0;
-    top: 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-
-    &:before,
-    &:after {
-        content: "";
-        display: table;
-    }
-
-    &:after {
-        clear: both;
-    }
-
-    .slick-loading & {
-        visibility: hidden;
-    }
-}
-
-.slick-slide {
-    float: left;
-    height: 100%;
-    min-height: 1px;
-
-    [dir="rtl"] & {
-        float: right;
-    }
-
-    img {
-        display: block;
-    }
-
-    &.slick-loading img {
-        display: none;
-    }
-
-    display: none;
-
-    &.dragging img {
-        pointer-events: none;
-    }
-
-    .slick-initialized & {
-        display: block;
-    }
-
-    .slick-loading & {
-        visibility: hidden;
-    }
-
-    .slick-vertical & {
-        display: block;
-        height: auto;
-        border: 1px solid transparent;
-    }
-}
-
-.slick-arrow.slick-hidden {
-    display: none;
 }

@@ -1,6 +1,94 @@
 @import '../../styles/mixins';
 @import '../../styles/media-queries';
 
+.timer {
+    background-color: #040E18;
+    padding: 0 20px;
 
+    @include lt-xs {
+        padding: 0;
+    }
+
+    &__wrapper {
+        border-radius: 20px;
+        background: #F0F0F2;
+        padding: 115px 0 94px 0;
+
+        @include lt-md {
+            padding: 50px 0 113px 0;
+        }
+    }
+
+    &__title {
+        @include ManropeSemiBold;
+
+        font-size: 60px;
+        line-height: 1.36em;
+        text-align: center;
+        text-transform: uppercase;
+        color: #040E18;
+
+        @include lt-md {
+            font-size: 45px;
+        }
+
+        @include lt-xs {
+            font-size: 36px;
+        }
+
+        @include lt-xxs {
+            padding: 0 16px;
+            text-align: left;
+            font-size: 32px;
+        }
+    }
+
+    .countdown {
+        margin: 58px auto 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 756px;
+        height: 120px;
+        background: #D6D6D6;
+        border-radius: 70px;
+
+        @include lt-md {
+            width: 530px;
+            height: 72px;
+        }
+
+        @include lt-xs {
+            margin: 32px auto 0 auto;
+            width: 94%;
+            height: 72px;
+        }
+
+        &__block {
+            @include ManropeSemiBold;
+
+            font-size: 72px;
+            line-height: 1.3em;
+            text-align: center;
+            color: #0090FF;
+            margin-right: 10px;
+            letter-spacing: -0.065em;
+
+            @include lt-md {
+                font-size: 50px;
+            }
+
+            @include lt-xs {
+                font-size: 36px;
+            }
+
+            &:last-child {
+                margin-right: 10px;
+            }
+        }
+    }
+
+
+}
 
 

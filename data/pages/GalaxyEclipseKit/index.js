@@ -1,4 +1,4 @@
-export default GalaxyEclipsKit = [
+const GalaxyEclipseKit = [
     {
         src: '/images/icons/blaster.svg',
         title: 'Бластер Eclipse',
@@ -25,3 +25,5 @@ export default GalaxyEclipsKit = [
         count: '1 pcs'
     },
 ]
+
+export default GalaxyEclipseKit;
