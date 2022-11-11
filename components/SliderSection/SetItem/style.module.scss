@@ -1,0 +1,30 @@
+@import '../../../styles/mixins';
+@import '../../../styles/media-queries';
+
+.set__item {
+    display: flex;
+    align-items: center;
+    flex: 0 0 30%;
+    position: relative;
+
+    .item__descr {
+        margin-left: 17px;
+
+        .item__title {
+            @include ManropeMedium;
+
+            font-size: 14px;
+            line-height: 1.43em;
+            color: #040E18;
+        }
+
+        .count_in_set {
+            @include ManropeMedium;
+
+            font-size: 14px;
+            line-height: 1.43em;
+            color: #040E18;
+            opacity: 0.4;
+        }
+    }
+}

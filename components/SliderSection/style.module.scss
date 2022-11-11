@@ -1,0 +1,314 @@
+@import '../../styles/mixins';
+@import '../../styles/media-queries';
+
+.slider {
+    background-color: #040E18;
+    padding: 76px 20px;
+    position: relative;
+
+    @include lt-lg {
+        padding: 50px 20px;
+    }
+
+    &__image {
+        position: relative;
+        height: 432px;
+        border-radius: 20px 20px 0px 0px;
+
+        @include lt-xxs {
+            height: 300px;
+        }
+    }
+
+    &__dicount {
+        @include ManropeSemiBold;
+
+        position: absolute;
+        bottom: 36px;
+        left: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 219px;
+        height: 121px;
+        background: #0090FF;
+        border-radius: 20px;
+        font-size: 64px;
+        line-height: 0.78em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        @include lt-md {
+            width: 180px;
+            height: 100px;
+            font-size: 50px;
+        }
+
+        @include lt-xs {
+            width: 118px;
+            height: 65px;
+            bottom: 22px;
+            left: 22px;
+            width: 120px;
+            height: 70px;
+            font-size: 36px;
+        }
+    }
+
+    &__set_info {
+        padding: 40px;
+        background: #FFFFFF;
+        position: relative;
+        border-radius: 0px 0px 20px 20px;
+
+        @include lt-xxs {
+            padding: 20px 20px 60px;
+        }
+
+        .what_is_included {
+            margin-top: 56px;
+            display: grid;
+            gap: 36px 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 794px;
+
+            @include lt-sm {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include lt-xxs {
+                margin-top: 42px;
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    &__set_title {
+        @include ManropeSemiBold;
+
+        display: flex;
+        flex-direction: column;
+        font-size: 48px;
+        line-height: 1.04em;
+        text-transform: uppercase;
+
+        @include lt-md {
+            font-size: 45px;
+        }
+
+        @include lt-xs {
+            font-size: 36px;
+        }
+
+        @include lt-xxs {
+            font-size: 30px;
+        }
+    }
+
+    &__set_descr {
+        @include ManropeMedium;
+
+        margin-top: 21px;
+        font-size: 18px;
+        line-height: 1.44em;
+        color: #040E18;
+        max-width: 566px;
+
+        @include lt-xs {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        @include lt-xxs {
+            margin-top: 7px;
+            font-size: 12px;
+            line-height: 1.6em;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        @include lt-lg {
+            justify-content: space-between;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 49px;
+        height: 19px;
+        background: #EFEFEF;
+        border-radius: 30px;
+    }
+
+    .dot {
+        width: 7px;
+        height: 7px;
+        background: #C4C4C4;
+        margin-right: 14px;
+        border-radius: 100px;
+        cursor: pointer;
+
+        &_active {
+            background: #0090FF;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .arrow_left {
+        position: absolute;
+        top: -30%;
+        left: -87px;
+        cursor: pointer;
+        color: #C4C4C4;
+        font-size: 50px;
+        will-change: color;
+        transition: color .3s ease;
+
+        @include lt-lg {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+
+    .arrow_right {
+        position: absolute;
+        top: -30%;
+        right: -87px;
+        cursor: pointer;
+        color: #C4C4C4;
+        font-size: 50px;
+        will-change: color;
+        transition: color .3s ease;
+
+        @include lt-lg {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover {
+            color: white;
+        }
+    }
+}
+
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.dragging {
+        cursor: pointer;
+        cursor: hand;
+    }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+}
+
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+
+    [dir="rtl"] & {
+        float: right;
+    }
+
+    img {
+        display: block;
+    }
+
+    &.slick-loading img {
+        display: none;
+    }
+
+    display: none;
+
+    &.dragging img {
+        pointer-events: none;
+    }
+
+    .slick-initialized & {
+        display: block;
+    }
+
+    .slick-loading & {
+        visibility: hidden;
+    }
+
+    .slick-vertical & {
+        display: block;
+        height: auto;
+        border: 1px solid transparent;
+    }
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
