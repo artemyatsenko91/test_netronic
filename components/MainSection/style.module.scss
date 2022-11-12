@@ -1,8 +1,9 @@
-@import '../../styles/_mixins.scss';
-@import '../../styles/_media-queries.scss';
+@import '../../styles/mixins';
+@import '../../styles/vars';
+@import '../../styles/media-queries';
 
 .main {
-    background-color: #040E18;
+    background-color: $bg-color-dark;
     padding: 40px 15px 133px;
 
     @include lt-xs {
@@ -19,7 +20,7 @@
         font-size: 60px;
         line-height: 1.08em;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: $color-white;
         max-width: 930px;
         width: 100%;
 
@@ -60,11 +61,11 @@
         font-size: 18px;
         line-height: 1.3em;
         letter-spacing: 0.01em;
-        color: #FFFFFF;
+        color: $color-white;
         margin-top: 20px;
 
         @include lt-xs {
-            font-size: 12px;
+            font-size: 14px;
             margin-top: 14px;
         }
     }
@@ -74,13 +75,9 @@
 
         width: 818px;
         z-index: 0;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke: .5px white;
         font-size: 200px;
-
-        @include lt-xs {
-            -webkit-text-stroke: .5px white;
-        }
+        text-shadow: 0 0 3px $color-white;
+        color: $bg-color-dark;
     }
 
     &__bg_toptext {

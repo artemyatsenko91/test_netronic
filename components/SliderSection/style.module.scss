@@ -1,8 +1,9 @@
 @import '../../styles/mixins';
+@import '../../styles/vars';
 @import '../../styles/media-queries';
 
 .slider {
-    background-color: #040E18;
+    background-color: $bg-color-dark;
     padding: 76px 20px;
     position: relative;
 
@@ -11,7 +12,7 @@
     }
 
     &__kit {
-        padding: 0 20px;
+        padding: 0 10px;
     }
 
     &__image {
@@ -36,12 +37,12 @@
         align-items: center;
         width: 219px;
         height: 121px;
-        background: #0090FF;
+        background: $color-light-blue;
         border-radius: 20px;
         font-size: 64px;
         line-height: 0.78em;
         text-transform: uppercase;
-        color: #FFFFFF;
+        color: $color-white;
 
         @include lt-md {
             width: 180px;
@@ -62,7 +63,7 @@
 
     &__set_info {
         padding: 40px 0 118px 40px;
-        background: #FFFFFF;
+        background: $color-white;
         position: relative;
         border-radius: 0px 0px 20px 20px;
 
@@ -116,7 +117,7 @@
         margin-top: 21px;
         font-size: 18px;
         line-height: 1.44em;
-        color: #040E18;
+        color: $bg-color-dark;
         max-width: 566px;
 
         @include lt-xs {

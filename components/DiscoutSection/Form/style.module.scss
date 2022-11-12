@@ -1,4 +1,5 @@
 @import '../../../styles/mixins';
+@import '../../../styles/vars';
 @import '../../../styles/media-queries';
 
 .discount__form {
@@ -6,9 +7,10 @@
     flex-direction: column;
     align-items: center;
     margin-top: 65px;
+    z-index: 100;
 
     @include lt-xs {
-        margin-top: 48px; 
+        margin-top: 48px;
     }
 
     .form__input_row {
@@ -28,12 +30,17 @@
             margin-right: 43.5px;
             width: 254px;
             height: 55px;
-            background: #D6D6D6;
+            background: $bg-timer-color-light-grey;
             border-radius: 45px;
             font-size: 14px;
             line-height: 14px;
             text-transform: uppercase;
-            color: #040E18;
+            border: 2px solid $bg-color-light;
+
+            &::placeholder {
+                color: $bg-color-dark;
+                opacity: 1;
+            }
 
             @include lt-md {
                 margin-bottom: 20px;
@@ -50,7 +57,7 @@
             }
 
             &:focus {
-                border: solid 2px #0090FF;
+                border: solid 2px $color-light-blue;
             }
         }
     }
@@ -68,10 +75,11 @@
         line-height: 19px;
         letter-spacing: 0.02em;
         text-transform: uppercase;
-        color: #F1F4F6;
+        color: $bg-color-light;
         cursor: pointer;
         will-change: background;
         transition: background .5s ease;
+        border: 2px solid $bg-color-light;
 
         @include lt-md {
             margin-top: 44px;
@@ -82,12 +90,7 @@
         }
 
         &:hover {
-            background: #0090FF;
+            background: $color-light-blue;
         }
     }
-}
-
-.error {
-    font-size: 14px;
-    color:red;
 }

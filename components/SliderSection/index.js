@@ -1,12 +1,9 @@
 import styles from './style.module.scss';
 import Image from 'next/dist/client/image';
-import SetItem from './SetItem';
-import FalconKit from '../../data/pages/FalconKit';
-import GalaxyEclipseKit from '../../data/pages/GalaxyEclipseKit';
-import dataSalesKits from '../../data/pages';
+import KitItem from './KitItem';
+import sliderData from '../../data/pages/BlackFriday/SliderData';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const SliderSection = () => {
     const settings = {
@@ -20,14 +17,14 @@ const SliderSection = () => {
         <section className={styles.slider}>
             <div className="container">
                 <Slider {...settings}>
-                    {dataSalesKits.map(item => (
+                    {sliderData.map(item => (
                         <div
                             className={styles.slider__kit}
                             key={item.desrc}
                         >
                             <div className={styles.slider__image}>
                                 <Image
-                                    src={item.src}
+                                    src={item.image}
                                     alt={item.title}
                                     fill
                                     objectFit="cover"
@@ -38,28 +35,18 @@ const SliderSection = () => {
                             </div>
                             <div className={styles.slider__set_info}>
                                 <h2 className={styles.slider__set_title}>
-                                    <span className='blue_selection'>{item.title}</span>SET
+                                    {item.title}
                                 </h2>
                                 <p className={styles.slider__set_descr}>{item.desrc}</p>
                                 <div className={styles.what_is_included}>
-                                    {item.title === 'FALCON STANDART'
-                                        ? FalconKit.map(item => (
-                                            <SetItem
-                                                key={item.src}
-                                                iconUrl={item.src}
-                                                title={item.title}
-                                                count={item.count}
-                                            />
-                                        ))
-                                        : GalaxyEclipseKit.map(item => (
-                                            <SetItem
-                                                key={item.src}
-                                                iconUrl={item.src}
-                                                title={item.title}
-                                                count={item.count}
-                                            />
-                                        ))
-                                    }
+                                    {item.kitData.map(item => (
+                                        <KitItem
+                                            key={item.src}
+                                            src={item.src}
+                                            title={item.title}
+                                            count={item.count}
+                                        />
+                                    ))}
                                 </div>
                             </div>
                         </div>

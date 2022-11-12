@@ -1,4 +1,5 @@
 @import '../../../styles/mixins';
+@import '../../../styles/vars';
 @import '../../../styles/media-queries';
 
 .set__item {
@@ -15,7 +16,7 @@
 
             font-size: 14px;
             line-height: 1.43em;
-            color: #040E18;
+            color: $bg-color-dark;
         }
 
         .count_in_set {
@@ -23,7 +24,7 @@
 
             font-size: 14px;
             line-height: 1.43em;
-            color: #040E18;
+            color: $bg-color-dark;
             opacity: 0.4;
         }
     }

@@ -13,9 +13,14 @@
     font-weight: 700;
 }
 
-@mixin FredokaOne-Regular {
+@mixin RobotoRegular {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+}
+
+@mixin RobotoMedium {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
 }
 
 

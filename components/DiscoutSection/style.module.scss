@@ -1,33 +1,17 @@
 @import '../../styles/mixins';
+@import '../../styles/vars';
 @import '../../styles/media-queries';
 
 .discount {
-    background-color: #040E18;
+    background-color: $bg-color-dark;
     padding: 0 20px;
 
     &__wrapper {
+        position: relative;
         margin: 0 auto;
         border-radius: 20px;
-        background: url('../../public/images/left-ribons.png') no-repeat,
-            #F0F0F2 url('../../public/images/right-ribons.png') 100% 0 no-repeat;
-
-        @include lt-lg {
-            background: url('../../public/images/left-ribons.png') -28% 0 no-repeat,
-                #F0F0F2 url('../../public/images/right-ribons.png') right -40% no-repeat;
-        }
-
-        @include lt-md {
-            background: url('../../public/images/left-ribons.png') -40% 0 no-repeat,
-                #F0F0F2 url('../../public/images/right-ribons.png') right -110% no-repeat;
-        }
-
-        @include lt-sm {
-            background: #F0F0F2;
-        }
-
-        @include lt-xxs {
-            background:#F0F0F2 url('../../public/images/right-ribons.png') right 80% 0 / cover no-repeat;
-        }
+        background-color: $bg-color-light;
+        overflow: hidden;
     }
 
     &__content {
@@ -50,10 +34,15 @@
         @include ManropeSemiBold;
 
         font-size: 60px;
-        line-height: 1.1em;
+        line-height: 0.83em;
         text-align: center;
         text-transform: uppercase;
-        color: #0090FF;
+        color: $color-light-blue;
+        z-index: 100;
+
+        span {
+            text-shadow: 0 0 5px $bg-color-light;
+        }
 
         @include lt-md {
             margin: 0 auto;
@@ -95,12 +84,28 @@
             font-size: 18px;
             line-height: 1.3em;
             letter-spacing: 0.02em;
-            color: #040E18;
+            color: $bg-color-dark;
 
             @include lt-xxs {
                 text-align: left;
                 font-size: 14px;
             }
         }
+    }
+
+    .left_ribons {
+        position: absolute;
+        top: 0;
+        // left: -120px;
+        left: 0;
+        z-index: 0;
+    }
+
+    .right_ribons {
+        position: absolute;
+        top: 0;
+        // left: -120px;
+        right: 0;
+        z-index: 0;
     }
 }

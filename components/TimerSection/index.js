@@ -1,7 +1,7 @@
 import styles from './style.module.scss';
 import { useTimer } from 'react-timer-hook';
 
-const TimerSection = ({ expiryTimestamp }) => {
+const TimerSection = ({ expiryTimestamp, title, btn_text }) => {
     const {
         seconds,
         minutes,
@@ -13,7 +13,7 @@ const TimerSection = ({ expiryTimestamp }) => {
             <div className={styles.timer__wrapper}>
                 <div className="container">
                     <h2 className={styles.timer__title}>
-                        <span className="blue_selection">Успей до окончания</span> Черной&nbsp;Пятницы!
+                        {title}
                     </h2>
                     <div className={styles.countdown}>
                         <div className={styles.countdown__block}>
@@ -33,7 +33,7 @@ const TimerSection = ({ expiryTimestamp }) => {
                             с.
                         </div>
                     </div>
-                    <button className="btn btn_timer">Получить скидку!</button>
+                    <button className="btn btn_timer">{btn_text}</button>
                 </div>
             </div>
         </section>

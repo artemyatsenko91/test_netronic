@@ -1,8 +1,9 @@
-@import '../../styles/_mixins.scss';
-@import '../../styles/_media-queries.scss';
+@import '../../styles/mixins';
+@import '../../styles/vars';
+@import '../../styles/media-queries';
 
 .header {
-    background-color: #040E18;
+    background-color: $bg-color-dark;
     padding: 9px 20px 7.5px 20px;
 
     @include lt-xs {

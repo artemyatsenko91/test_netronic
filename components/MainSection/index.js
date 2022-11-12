@@ -1,24 +1,22 @@
 import Image from "next/image";
-import MainImage from '../../public/images/main.png';
 import styles from './style.module.scss';
 
-const MainSection = () => {
+const Main = ({title,  descr, btn_text, image, bg_text}) => {
     return (
         <section className={styles.main}>
             <div className="container">
                 <div className={styles.main__content}>
                     <h1 className={styles.main__title}>
-                        <span className='blue_selection'>КАЖДОМУ</span> ПО ЧЕРНОМУ ТАГЕРУ В&nbsp;ЧЕРНУЮ ПЯТНИЦУ!
+                        {title}
                     </h1>
                     <p className={styles.main__descr}>
-                        Только до 26 ноября сэкономьте до 20% при покупке одного из сетов с 12 игровыми комплектами FALCON STANDARD или
-                        ECLIPSE.
+                        {descr}
                     </p>
-                    <button className='btn btn_main'>Получить скидку!</button>
+                    <button className='btn btn_main'>{btn_text}</button>
                     <div className={styles.main__img_block}>
 
                         <Image
-                            src={MainImage}
+                            src={image}
                             alt="Black-Friday"
                             fill
                             objectFit="cover"
@@ -27,16 +25,16 @@ const MainSection = () => {
                         />
                     </div>
                     <span className={`
-                    ${styles.main__bg_text} 
-                    ${styles.main__bg_toptext}
+                        ${styles.main__bg_text} 
+                        ${styles.main__bg_toptext}
                     `}>
-                        ЧЕРНАЯ ПЯТНИЦА
+                        {bg_text}
                     </span>
                     <span className={`
-                    ${styles.main__bg_text} 
-                    ${styles.main__bg_bottext}
+                        ${styles.main__bg_text} 
+                        ${styles.main__bg_bottext}
                     `}>
-                        ЧЕРНАЯ ПЯТНИЦА
+                        {bg_text}
                     </span>
                 </div>
             </div>
@@ -44,4 +42,4 @@ const MainSection = () => {
     )
 }
 
-export default MainSection;
+export default Main;

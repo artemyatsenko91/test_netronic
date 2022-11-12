@@ -1,10 +1,10 @@
 import styles from './style.module.scss';
 
-const SetItem = ({ iconUrl, title, count }) => {
+const KitItem = ({ src, title, count }) => {
     return (
         <div className={styles.set__item}>
             <img
-                src={iconUrl}
+                src={src}
                 alt={title}
             />
             <div className={styles.item__descr}>
@@ -15,4 +15,4 @@ const SetItem = ({ iconUrl, title, count }) => {
     )
 }
 
-export default SetItem;
+export default KitItem;

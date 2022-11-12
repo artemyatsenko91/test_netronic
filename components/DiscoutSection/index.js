@@ -1,5 +1,8 @@
 import styles from './style.module.scss';
 import Form from './Form';
+import Image from 'next/image';
+import LeftRibons from '../../public/images/left-ribons.png';
+import RightRibons from '../../public/images/right-ribons.png';
 
 const DiscountSection = () => {
     return (
@@ -17,9 +20,21 @@ const DiscountSection = () => {
                                     с вами!
                                 </p>
                             </div>
-                            <Form/>
+                            <Form />
                         </div>
                     </div>
+                    <Image
+                        className={styles.left_ribons}
+                        alt='ribons'
+                        src={LeftRibons}
+                        objectFit='contain'
+                    />
+                    <Image
+                        className={styles.right_ribons}
+                        alt='ribons'
+                        src={RightRibons}
+                        objectFit='contain'
+                    />
                 </div>
             </section>
         </>
