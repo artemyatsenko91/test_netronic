@@ -1,0 +1,82 @@
+@import '../../../styles/mixins';
+@import '../../../styles/vars';
+@import '../../../styles/media-queries';
+
+.slider {
+    &__kit_info {
+        padding: 40px 0 118px 40px;
+        background: $color-white;
+        position: relative;
+        border-radius: 0px 0px 20px 20px;
+
+        @include lt-xs {
+            padding: 20px 20px 150px;
+        }
+
+        .what_is_included {
+            margin-top: 56px;
+            display: grid;
+            gap: 36px 0;
+            grid-template-columns: 1fr 1fr 1fr;
+            max-width: 794px;
+
+            @include lt-sm {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include lt-xxs {
+                margin-top: 42px;
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    &__kit_title {
+        @include ManropeSemiBold;
+
+        display: flex;
+        flex-direction: column;
+        font-size: 48px;
+        line-height: 1.04em;
+        text-transform: uppercase;
+
+        span {
+            @include lt-xs {
+                max-width: 230px;
+            } 
+        }
+
+        @include lt-md {
+            font-size: 45px;
+        }
+
+        @include lt-xs {
+            font-size: 36px;
+        }
+
+        @include lt-xxs {
+            font-size: 30px;
+        }
+    }
+
+    &__kit_descr {
+        @include ManropeMedium;
+
+        margin-top: 21px;
+        font-size: 18px;
+        line-height: 1.44em;
+        color: $bg-color-dark;
+        max-width: 566px;
+
+        @include lt-xs {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        @include lt-xxs {
+            margin-top: 7px;
+            font-size: 12px;
+            line-height: 1.6em;
+        }
+    }
+}

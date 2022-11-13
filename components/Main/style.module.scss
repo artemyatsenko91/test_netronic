@@ -4,10 +4,10 @@
 
 .main {
     background-color: $bg-color-dark;
-    padding: 40px 15px 133px;
+    padding: 85px 15px 133px;
 
     @include lt-xs {
-        padding: 40px 15px 177px;
+        padding: 85px 15px 177px;
     }
 
     &__content {
@@ -45,7 +45,7 @@
         border-radius: 20px;
         margin-top: 87px;
         overflow: hidden;
-        z-index: 100;
+        z-index: 2;
 
         @include lt-xxs {
             margin: 160px 0 0 -15px;

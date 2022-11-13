@@ -1,7 +1,7 @@
 import Link from "next/dist/client/link";
 import SocialNetworkLink from "../SocialNetworkLink";
-import MessangersData from "../../../data/pages/BlackFriday/Messangers";
-import SocialNetworksData from "../../../data/pages/BlackFriday/SocialNetworks";
+import { SocialNetworksData, FeedBackInfoData } from "../../../data/pages/BlackFriday";
+import FeedBackInfo from "../FeedBackInfo";
 import styles from './style.module.scss';
 
 const MobileFooter = () => {
@@ -60,44 +60,20 @@ const MobileFooter = () => {
         <footer className={styles.footer}>
             <div className="container">
                 <div className={styles.footer__mobile}>
-                    <div className={styles.footer__feedback}>
-                        <div className={styles.feedback__email_field}>
-                            <span className={styles.feedback__field_name}>
-                                Email
-                            </span>
-                            <Link
-                                className={styles.feedback__email}
-                                href="mailto:info@lasertag.** "
-                            >info@lasertag.**
-                            </Link>
-                        </div>
-                    </div>
-                    <div className={styles.footer__feedback}>
-                        <div className={styles.feedback__phone}>
-                            <span className={styles.feedback__field_name}>
-                                Телефон
-                            </span>
-                            <Link
-                                className={styles.feedback__phone_number}
-                                href="tel:+380930140616"
-                            >+380930140616
-                            </Link>
-                        </div>
-                        <ul className={styles.feedback__messengers}>
-                            {MessangersData.map((item, index) => (
-                                <SocialNetworkLink
-                                    key={index}
-                                    url={item.url}
-                                    icon={item.icon}
-                                />
-                            ))}
-                        </ul>
-                    </div>
+                    {FeedBackInfoData.map((item, index) => (
+                        <FeedBackInfo
+                        key={index}
+                            field_name={item.field_name}
+                            field_value={item.field_value}
+                            data={item.data}
+                            style_name={item.style_name}
+                        />
+                    ))}
                     <Link href="#" className={styles.footer__logo}>
                         <span >{logoSVG}</span>
                     </Link>
                     <ul className={styles.footer__social_networks}>
-                        {SocialNetworksData.map((item, index) => (
+                        {SocialNetworksData?.map((item, index) => (
                             <SocialNetworkLink
                                 key={index}
                                 url={item.url}

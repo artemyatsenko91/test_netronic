@@ -34,13 +34,13 @@
         @include ManropeSemiBold;
 
         font-size: 60px;
-        line-height: 0.83em;
         text-align: center;
         text-transform: uppercase;
         color: $color-light-blue;
         z-index: 100;
 
         span {
+            line-height: 0.83em;
             text-shadow: 0 0 5px $bg-color-light;
         }
 
@@ -95,17 +95,35 @@
 
     .left_ribons {
         position: absolute;
+        height: 100%;
         top: 0;
-        // left: -120px;
+        user-select: none;
         left: 0;
         z-index: 0;
+
+        @include lt-lg {
+            left: -200px;
+        }
+
+        @include lt-xs {
+            display: none;
+        }
     }
 
     .right_ribons {
         position: absolute;
+        height: 100%;
         top: 0;
-        // left: -120px;
+        user-select: none;
         right: 0;
         z-index: 0;
+
+        @include lt-lg {
+            right: -200px;
+        }
+
+        @include lt-xs {
+            right: -220px;
+        }
     }
 }

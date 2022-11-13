@@ -2,7 +2,7 @@ import styles from './style.module.scss';
 
 const KitItem = ({ src, title, count }) => {
     return (
-        <div className={styles.set__item}>
+        <div className={styles.kit__item}>
             <img
                 src={src}
                 alt={title}

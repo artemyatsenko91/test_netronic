@@ -4,7 +4,7 @@ import Image from 'next/image';
 import LeftRibons from '../../public/images/left-ribons.png';
 import RightRibons from '../../public/images/right-ribons.png';
 
-const DiscountSection = () => {
+const DiscountSection = ({ title, descr }) => {
     return (
         <>
             <section className={styles.discount}>
@@ -12,29 +12,28 @@ const DiscountSection = () => {
                     <div className="container">
                         <div className={styles.discount__content}>
                             <h2 className={styles.discount__title}>
-                                <span className="blue_selection">СКИДКА НА&nbsp;ЧЕРНУЮ ПЯТНИЦУ</span>
+                                {title && title}
                             </h2>
                             <div className={styles.discount__descr}>
                                 <p>
-                                    Только с 15 до 26 ноября - поспешите оставить заявку и мы обязательно свяжемся
-                                    с вами!
+                                    {descr && descr}
                                 </p>
                             </div>
                             <Form />
                         </div>
                     </div>
-                    <Image
+                    {LeftRibons && <Image
                         className={styles.left_ribons}
                         alt='ribons'
                         src={LeftRibons}
                         objectFit='contain'
-                    />
-                    <Image
+                    />}
+                    {RightRibons && <Image
                         className={styles.right_ribons}
                         alt='ribons'
                         src={RightRibons}
                         objectFit='contain'
-                    />
+                    />}
                 </div>
             </section>
         </>

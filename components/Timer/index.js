@@ -13,7 +13,7 @@ const TimerSection = ({ expiryTimestamp, title, btn_text }) => {
             <div className={styles.timer__wrapper}>
                 <div className="container">
                     <h2 className={styles.timer__title}>
-                        {title}
+                        {title && title}
                     </h2>
                     <div className={styles.countdown}>
                         <div className={styles.countdown__block}>
@@ -33,7 +33,7 @@ const TimerSection = ({ expiryTimestamp, title, btn_text }) => {
                             с.
                         </div>
                     </div>
-                    <button className="btn btn_timer">{btn_text}</button>
+                    <button className="btn btn_timer">{btn_text && btn_text}</button>
                 </div>
             </div>
         </section>

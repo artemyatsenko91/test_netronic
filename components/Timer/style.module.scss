@@ -4,7 +4,6 @@
 
 .timer {
     background-color: $bg-color-dark;
-    padding: 0 20px;
 
     @include lt-xs {
         padding: 0;
@@ -16,7 +15,7 @@
         padding: 115px 0 94px 0;
 
         @include lt-md {
-            padding: 50px 0 113px 0;
+            padding: 50px 20px 113px 20px;
         }
     }
 
@@ -51,7 +50,7 @@
         align-items: center;
         width: 756px;
         height: 120px;
-        background: $bg-timer-color-light-grey;
+        background: rgba(214, 214, 214, .38);
         border-radius: 70px;
 
         @include lt-md {

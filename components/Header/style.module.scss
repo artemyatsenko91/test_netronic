@@ -5,24 +5,101 @@
 .header {
     background-color: $bg-color-dark;
     padding: 9px 20px 7.5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $bg-color-dark;
+    }
 
     @include lt-xs {
         padding: 16px;
     }
 
-    &__wrapper {
+    &__body {
+        position: relative;
+        z-index: 2;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
-    &__menu {
+    &__logo {
         display: flex;
-        flex: 0 0 72%;
+        flex: 1 1 auto;
+        z-index: 2;
+        position: relative;
 
         @include lt-md {
-            flex: 1 1 auto;
+            flex: 0 0 auto;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        &_active {
+            @include lt-md {
+                position: relative;
+                z-index: 2;
+                display: block;
+                position: relative;
+                width: 20px;
+                height: 14px;
+                cursor: pointer;
+            }
+        }
+
+        @include lt-md {
+            position: relative;
+            z-index: 2;
+            display: block;
+            position: relative;
+            width: 20px;
+            height: 14px;
+            cursor: pointer;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            height: 10%;
+            width: 100%;
+            transition: all .3s ease;
+            background-color: white;
+        }
+
+        &:before,
+        &:after {
+            content: '';
+        }
+
+        &:before {
+            top: 0;
+        }
+
+        &_active:before {
+            transform: rotate(45deg);
+        }
+
+        &:after {
+            bottom: 0;
+        }
+    }
+
+    &__burger_active {
+
+        &:before {
+            transform: rotate(45deg);
         }
     }
 }
-
-

@@ -2,8 +2,8 @@
 @import '../../../styles/vars';
 @import '../../../styles/media-queries';
 
-.menu {
-    &__body {
+.header {
+    &__menu {
         display: flex;
         flex: 1 1 auto;
         justify-content: space-between;
@@ -14,13 +14,33 @@
         }
     }
 
+    &__menu_active {
+        @include lt-md {
+            position: fixed;
+            align-items: flex-start;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: $bg-color-dark;
+            ;
+        }
+    }
+
     &__list {
         display: flex;
         list-style: none;
         color: $color-white;
-
+        
         li {
+            width: 100%;
             margin-right: 45px;
+
+            @include lt-md {
+                margin-right: 0;
+                margin-bottom: 20px;
+
+            }
 
             &:last-child {
                 margin-right: 0;
@@ -28,13 +48,56 @@
         }
     }
 
+    &__list_active {
+        @include lt-md {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 70px 20px 0 20px;
+            flex-direction: column;
+        }
+    }
+
     &__phone {
         justify-content: flex-end;
         cursor: pointer;
 
+        @include lt-md {
+            display: none;
+        }
+
         svg {
             circle:hover {
                 fill: $grey-color;
+            }
+        }
+    }
+
+    &__link {
+        @include ManropeSemiBold;
+
+        text-transform: uppercase;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.02em;
+        color: $grey-color;
+        cursor: pointer;
+        will-change: color;
+        transition: color .3s ease;
+
+        &:hover {
+            color: $color-white;
+        }
+
+        &_active {
+            cursor: pointer;
+            color: $color-white;
+            will-change: color;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $grey-color;
+                ;
             }
         }
     }

@@ -1,0 +1,59 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+@import '../../styles/media-queries';
+
+.slider {
+    background-color: $bg-color-dark;
+    padding: 76px 20px;
+    position: relative;
+
+    &__kit {
+        padding: 0 10px;
+    }
+
+    &__image {
+        position: relative;
+        height: 432px;
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+
+        @include lt-xxs {
+            height: 300px;
+        }
+    }
+
+    &__dicount {
+        @include ManropeSemiBold;
+
+        position: absolute;
+        bottom: 36px;
+        left: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 219px;
+        height: 121px;
+        background: $color-light-blue;
+        border-radius: 20px;
+        font-size: 64px;
+        line-height: 0.78em;
+        text-transform: uppercase;
+        color: $color-white;
+
+        @include lt-md {
+            width: 180px;
+            height: 100px;
+            font-size: 50px;
+        }
+
+        @include lt-xs {
+            width: 118px;
+            height: 65px;
+            bottom: 22px;
+            left: 22px;
+            width: 120px;
+            height: 70px;
+            font-size: 36px;
+        }
+    }
+}

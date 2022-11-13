@@ -1,6 +1,6 @@
 import styles from './style.module.scss';
 import SocialNetworkLink from '../SocialNetworkLink';
-import SocialNetworksData from '../../../data/pages/BlackFriday/SocialNetworks';
+import { SocialNetworksData } from '../../../data/pages/BlackFriday';
 import Link from 'next/dist/client/link';
 
 const DesktopFooter = () => {
@@ -12,7 +12,7 @@ const DesktopFooter = () => {
                         <img src="/images/icons/footer-logo.svg" alt="logo" />
                     </Link>
                     <ul className={styles.footer__social_networks}>
-                        {SocialNetworksData.map((item, index) => (
+                        {SocialNetworksData?.map((item, index) => (
                             <SocialNetworkLink
                                 key={index}
                                 url={item.url}

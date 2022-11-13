@@ -1,8 +1,8 @@
-import Header from "../components/header";
-import Main from "../components/MainSection";
-import Discount from "../components/DiscoutSection";
-import Slider from "../components/SliderSection";
-import Timer from "../components/TimerSection";
+import Header from "../components/Header";
+import Main from "../components/Main";
+import Discount from "../components/Discout";
+import Slider from "../components/Slider";
+import Timer from "../components/Timer";
 import DesktopFooter from "../components/Footer/DesktopFooter";
 import MobileFooter from "../components/Footer/MobileFooter";
 import logo from '../public/images/icons/logo.svg';
@@ -23,7 +23,15 @@ export default function Home() {
         image='/images/main.png'
         bg_text='ЧЕРНАЯ ПЯТНИЦА'
       />
-      <Discount />
+      <Discount
+        title={
+          <>
+            <span className="blue_selection">СКИДКА НА&nbsp;ЧЕРНУЮ ПЯТНИЦУ</span>
+          </>
+        }
+        descr="Только с 15 до 26 ноября - поспешите оставить заявку и мы обязательно свяжемся
+        с вами!"
+      />
       <Slider />
       <Timer
         expiryTimestamp={time}
