@@ -57,6 +57,30 @@
                 height: 14px;
                 cursor: pointer;
             }
+
+            &:before,
+            &:after {
+                position: absolute;
+                height: 10%;
+                width: 100%;
+                transition: all .3s ease;
+                background-color: white;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+            }
+
+            &:before {
+                transform: rotate(45deg);
+                top: 7px;
+            }
+
+            &:after {
+                bottom: 7px;
+                transform: rotate(-45deg);;
+            }
         }
 
         @include lt-md {
@@ -87,19 +111,8 @@
             top: 0;
         }
 
-        &_active:before {
-            transform: rotate(45deg);
-        }
-
         &:after {
             bottom: 0;
-        }
-    }
-
-    &__burger_active {
-
-        &:before {
-            transform: rotate(45deg);
         }
     }
 }

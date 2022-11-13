@@ -1,5 +1,5 @@
 import styles from './style.module.scss';
-import { LinkNames } from '../../../data/pages/BlackFriday';
+// import { LinkNames } from '../../../data/pages/BlackFriday';
 import Link from 'next/link';
 
 const phoneIcon = (
@@ -16,7 +16,7 @@ const phoneIcon = (
     </svg>
 )
 
-const NavMenu = ({ active, setMenuActive }) => {
+const NavMenu = ({ active, setMenuActive, linkNames }) => {
     return (
         <nav className={
             active
@@ -26,7 +26,7 @@ const NavMenu = ({ active, setMenuActive }) => {
                 active
                     ? `${styles.header__list_active}`
                     : `${styles.header__list}`}>
-                {LinkNames?.map((item, index) => (
+                {linkNames?.map((item, index) => (
                     <MenuLink
                         key={index}
                         text={item.text}

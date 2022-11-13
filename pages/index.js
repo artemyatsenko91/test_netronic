@@ -3,16 +3,22 @@ import Main from "../components/Main";
 import Discount from "../components/Discout";
 import Slider from "../components/Slider";
 import Timer from "../components/Timer";
-import DesktopFooter from "../components/Footer/DesktopFooter";
-import MobileFooter from "../components/Footer/MobileFooter";
 import logo from '../public/images/icons/logo.svg';
+import { SliderData } from "../data/pages/BlackFriday";
+import { LinkNames } from "../data/pages/BlackFriday";
+import Footer from "../components/Footer";
+
+const textAfterDigits = {
+  afterDays: 'д.',
+  afterHours: 'ч.',
+  afterMinutes: 'м.',
+  afterSeconds: 'c.',
+}
 
 export default function Home() {
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 600000);
   return (
     <>
-      <Header logo={logo} />
+      <Header logo={logo} linkNames={LinkNames} />
       <Main
         title={
           <>
@@ -25,24 +31,29 @@ export default function Home() {
       />
       <Discount
         title={
-          <>
-            <span className="blue_selection">СКИДКА НА&nbsp;ЧЕРНУЮ ПЯТНИЦУ</span>
-          </>
+          <span className="blue_selection">СКИДКА НА&nbsp;ЧЕРНУЮ ПЯТНИЦУ</span>
         }
         descr="Только с 15 до 26 ноября - поспешите оставить заявку и мы обязательно свяжемся
         с вами!"
       />
-      <Slider />
+      <Slider sliderData={SliderData} />
       <Timer
-        expiryTimestamp={time}
+        date="2022-11-24T00:00:00"
+        textAfterDigits={textAfterDigits}
         title={
           <>
             <span className="blue_selection">Успей до окончания</span> Черной&nbsp;Пятницы!
           </>}
         btn_text='Получить скидку!'
       />
-      <DesktopFooter />
-      <MobileFooter />
+      <Footer
+        footerLogo='/images/icons/footer-logo.svg'
+        footerLogoMobile='/images/icons/fotter-mob-logo.svg'
+        privacyPolicy='Политика конфиденциальности'
+        map='Карта сайта'
+        copyright={
+          `Copyright © ${new Date().getFullYear()}. All Rights Reserved.`
+        } />
     </>
   )
 }
