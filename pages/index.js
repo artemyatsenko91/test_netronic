@@ -6,6 +6,8 @@ import DiscountTimer from '../components/Timer';
 import logo from '../public/images/icons/logo.svg';
 import Footer from '../components/Footer';
 import phoneIcon from '../public/images/icons/header-phone.svg';
+import nextArrow from '../public/images/icons/arrow-right.svg';
+import prevArrow from '../public/images/icons/arrow-left.svg';
 import {
     footerMenuLinksData,
     linkNames,
@@ -46,7 +48,11 @@ export default function Home() {
         с вами!'
                 alt='ribons'
             />
-            <SliderKits sliderData={sliderData} />
+            <SliderKits
+                sliderData={sliderData}
+                next={nextArrow}
+                prev={prevArrow}
+            />
             <DiscountTimer
                 date='2022-11-24T00:00:00'
                 textAfterDigits={textAfterDigits}

@@ -157,7 +157,6 @@ $slick-opacity-not-active: 0.25 !default;
         }
     }
 }
-
 /* Dots */
 
 .slick-dotted.slick-slider {
@@ -233,94 +232,46 @@ $slick-opacity-not-active: 0.25 !default;
 
 /* Custom styles slider */
 
-// .slick-prev,
-// .slick-next {
-//     height: 50px;
-//     width: 50px;
-//     top: 30%;
+.slick-prev,
+.slick-next {
+    height: 50px;
+    width: 50px;
+    top: 30%;
 
-//     @include lt-lg {
-//         top: auto;
-//         bottom: 5px;
-//     }
+    @include lt-lg {
+        top: auto;
+        bottom: 5px;
+    }
 
-//     @include lt-xs {
-//         top: auto;
-//         bottom: 25px;
-//     }
+    @include lt-xs {
+        top: auto;
+        bottom: 25px;
+    }
 
-//     &:before {
-//         font-size: 50px;
-//     }
-// }
+    &:before {
+        font-size: 50px;
+    }
+}
 
-// .slider__content {
-//     .slick-prev {
-//         left: -50px;
-//         background: url('../public/images/icons/arrow-left.svg');
+.slider__content {
+    .slick-prev {
+        left: -50px;
 
-//         @include lt-lg {
-//             z-index: 100;
-//             left: 43px;
-//         }
+        @include lt-lg {
+            z-index: 3;
+            left: 43px;
+        }
+    }
 
-//         &:before {
-//             content: $slick-prev-character;
-//             [dir="rtl"] & {
-//                 content: $slick-next-character;
-//             }
-//         }
-//     }
+    .slick-next {
+        right: -50px;
 
-//     .slick-next {
-//         right: -50px;
-
-//         @include lt-lg {
-//             z-index: 100;
-//             right: 43px;
-//         }
-//     }
-// }
-// .slick-prev,
-// .slick-next {
-//     height: 50px;
-//     width: 50px;
-//     top: 30%;
-
-//     @include lt-lg {
-//         top: auto;
-//         bottom: 5px;
-//     }
-
-//     @include lt-xs {
-//         top: auto;
-//         bottom: 25px;
-//     }
-
-//     &:before {
-//         font-size: 50px;
-//     }
-// }
-
-// .slider__content {
-//     .slick-prev {
-//         left: 85%;
-
-//         @include lt-lg {
-//             z-index: 10;
-//             left: -430px;
-//         }
-//     }
-
-//     .slick-next {
-//         right: -50px;
-
-//         @include lt-lg {
-//             z-index: 10;
-//             left: 43px;
-//         }
-//     }
-// }
+        @include lt-lg {
+            z-index: 3;
+            right: 43px;
+        }
+    }
+}
 
 .slick-dots {
     width: 49px;
@@ -358,4 +309,9 @@ $slick-opacity-not-active: 0.25 !default;
             }
         }
     }
+}
+
+.slick-next:before,
+.slick-prev:before {
+  content: "" !important;
 }

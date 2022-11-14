@@ -4,13 +4,27 @@ import Slider from 'react-slick';
 import KitInfo from './KitInfo';
 import 'slick-carousel/slick/slick.css';
 
-const SliderKits = ({ sliderData }) => {
+const SliderKits = ({ sliderData, next, prev }) => {
     const settings = {
         dots: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        nextArrow: (
+            <div>
+                <div className='next-slick-arrow'>
+                    <Image src={next} alt='nextArr' />
+                </div>
+            </div>
+        ),
+        prevArrow: (
+            <div>
+                <div className='next-slick-arrow'>
+                    <Image src={prev} alt='nextArr' />
+                </div>
+            </div>
+        ),
     };
     return (
         <section className={styles.slider}>
