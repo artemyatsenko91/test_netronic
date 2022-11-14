@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from './style.module.scss';
 
-const Main = ({ title, descr, btn_text, image, bg_text }) => {
+const Main = ({ title, descr, btn_text, image, bg_text, alt, objectPosition }) => {
     return (
         <section className={styles.main}>
             <div className="container">
@@ -16,10 +16,10 @@ const Main = ({ title, descr, btn_text, image, bg_text }) => {
                     <div className={styles.main__img_block}>
                         {image && <Image
                             src={image}
-                            alt="Black-Friday"
+                            alt={alt}
                             fill
                             objectFit="cover"
-                            objectPosition="70% 50%"
+                            objectPosition={objectPosition}
                             priority
                         />}
                     </div>

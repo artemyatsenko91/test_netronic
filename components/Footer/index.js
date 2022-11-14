@@ -1,13 +1,12 @@
 import MobileFooter from "./MobileFooter";
 import DesktopFooter from "./DesktopFooter";
 
-const Footer = ({ privacyPolicy, map, copyright, footerLogo, footerLogoMobile }) => {
+const Footer = ({ copyright, footerLogo, footerLogoMobile, data}) => {
     return (
         <>
             <DesktopFooter
+                data={data}
                 footerLogo={footerLogo}
-                privacyPolicy={privacyPolicy}
-                map={map}
                 copyright={copyright} />
             <MobileFooter
                 footerLogoMobile={footerLogoMobile} />

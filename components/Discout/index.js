@@ -4,7 +4,7 @@ import Image from 'next/image';
 import LeftRibons from '../../public/images/left-ribons.png';
 import RightRibons from '../../public/images/right-ribons.png';
 
-const DiscountSection = ({ title, descr }) => {
+const Discount = ({ title, descr, alt }) => {
     return (
         <>
             <section className={styles.discount}>
@@ -24,13 +24,13 @@ const DiscountSection = ({ title, descr }) => {
                     </div>
                     {LeftRibons && <Image
                         className={styles.left_ribons}
-                        alt='ribons'
+                        alt={alt}
                         src={LeftRibons}
                         objectFit='contain'
                     />}
                     {RightRibons && <Image
                         className={styles.right_ribons}
-                        alt='ribons'
+                        alt={alt}
                         src={RightRibons}
                         objectFit='contain'
                     />}
@@ -40,4 +40,4 @@ const DiscountSection = ({ title, descr }) => {
     )
 }
 
-export default DiscountSection;
+export default Discount;

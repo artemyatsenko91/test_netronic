@@ -4,9 +4,10 @@ import Discount from "../components/Discout";
 import Slider from "../components/Slider";
 import Timer from "../components/Timer";
 import logo from '../public/images/icons/logo.svg';
-import { SliderData } from "../data/pages/BlackFriday";
-import { LinkNames } from "../data/pages/BlackFriday";
+import { linkNames } from "../data/pages/BlackFriday";
 import Footer from "../components/Footer";
+import phoneIcon from '../public/images/icons/header-phone.svg';
+import { footerMenuLinksData } from "../data/pages/BlackFriday";
 
 const textAfterDigits = {
   afterDays: 'д.',
@@ -18,7 +19,7 @@ const textAfterDigits = {
 export default function Home() {
   return (
     <>
-      <Header logo={logo} linkNames={LinkNames} />
+      <Header logo={logo} linkNames={linkNames} phoneIcon={phoneIcon}/>
       <Main
         title={
           <>
@@ -28,6 +29,8 @@ export default function Home() {
         btn_text="Получить скидку!"
         image='/images/main.png'
         bg_text='ЧЕРНАЯ ПЯТНИЦА'
+        alt='Black Friday'
+        objectPosition="70% 50%"
       />
       <Discount
         title={
@@ -35,8 +38,9 @@ export default function Home() {
         }
         descr="Только с 15 до 26 ноября - поспешите оставить заявку и мы обязательно свяжемся
         с вами!"
+        alt='ribons'
       />
-      <Slider sliderData={SliderData} />
+      <Slider />
       <Timer
         date="2022-11-24T00:00:00"
         textAfterDigits={textAfterDigits}
@@ -47,10 +51,9 @@ export default function Home() {
         btn_text='Получить скидку!'
       />
       <Footer
+        data={footerMenuLinksData}
         footerLogo='/images/icons/footer-logo.svg'
         footerLogoMobile='/images/icons/fotter-mob-logo.svg'
-        privacyPolicy='Политика конфиденциальности'
-        map='Карта сайта'
         copyright={
           `Copyright © ${new Date().getFullYear()}. All Rights Reserved.`
         } />

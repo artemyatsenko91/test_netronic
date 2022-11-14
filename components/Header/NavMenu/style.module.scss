@@ -65,12 +65,6 @@
         @include lt-md {
             display: none;
         }
-
-        svg {
-            circle:hover {
-                fill: $grey-color;
-            }
-        }
     }
 
     &__link {

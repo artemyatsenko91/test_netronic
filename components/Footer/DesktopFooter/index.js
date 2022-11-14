@@ -1,9 +1,10 @@
 import styles from './style.module.scss';
 import SocialNetworkLink from '../SocialNetworkLink';
-import { SocialNetworksData } from '../../../data/pages/BlackFriday';
+import { socialNetworksData } from '../../../data/pages/BlackFriday';
 import Link from 'next/dist/client/link';
+import FooterMenuLink from '../FooterMenuLink';
 
-const DesktopFooter = ({ privacyPolicy, map, copyright, footerLogo }) => {
+const DesktopFooter = ({ copyright, footerLogo, data }) => {
     return (
         <footer className={styles.footer}>
             <div className="container">
@@ -14,7 +15,7 @@ const DesktopFooter = ({ privacyPolicy, map, copyright, footerLogo }) => {
                         </Link>
                     )}
                     <ul className={styles.footer__social_networks}>
-                        {SocialNetworksData?.map((item, index) => (
+                        {socialNetworksData?.map((item, index) => (
                             <SocialNetworkLink
                                 key={index}
                                 url={item.url}
@@ -24,13 +25,15 @@ const DesktopFooter = ({ privacyPolicy, map, copyright, footerLogo }) => {
                     </ul>
                     <nav>
                         <ul className={styles.footer__nav}>
-                            <li className={styles.nav_link}>
-                                <Link href="#">{privacyPolicy}</Link></li>
-                            <li className={styles.nav_link}>
-                                <Link href="#">{map}</Link></li>
+                            {data?.map((item, index) => (
+                                <FooterMenuLink
+                                    key={index}
+                                    url={item.url}
+                                    name={item.name}
+                                />
+                            ))}
                         </ul>
                     </nav>
-                    {copyright}
                     <p className={styles.copyright}>{copyright}</p>
                 </div>
             </div>

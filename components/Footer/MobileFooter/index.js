@@ -1,6 +1,6 @@
 import Link from "next/dist/client/link";
 import SocialNetworkLink from "../SocialNetworkLink";
-import { SocialNetworksData, FeedBackInfoData } from "../../../data/pages/BlackFriday";
+import { socialNetworksData, feedBackInfoData } from "../../../data/pages/BlackFriday";
 import FeedBackInfo from "../FeedBackInfo";
 import styles from './style.module.scss';
 
@@ -9,7 +9,7 @@ const MobileFooter = ({ footerLogoMobile }) => {
         <footer className={styles.footer}>
             <div className="container">
                 <div className={styles.footer__mobile}>
-                    {FeedBackInfoData.map((item, index) => (
+                    {feedBackInfoData.map((item, index) => (
                         <FeedBackInfo
                             key={index}
                             field_name={item.field_name}
@@ -24,7 +24,7 @@ const MobileFooter = ({ footerLogoMobile }) => {
                         </Link>
                     )}
                     <ul className={styles.footer__social_networks}>
-                        {SocialNetworksData?.map((item, index) => (
+                        {socialNetworksData?.map((item, index) => (
                             <SocialNetworkLink
                                 key={index}
                                 url={item.url}

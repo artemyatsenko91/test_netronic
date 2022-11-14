@@ -3,8 +3,9 @@ import Image from 'next/dist/client/image';
 import Slider from "react-slick";
 import KitInfo from './KitInfo';
 import "slick-carousel/slick/slick.css";
+import { sliderData } from "../../data/pages/BlackFriday";
 
-const SliderSection = ({sliderData}) => {
+const SliderSection = () => {
     const settings = {
         dots: true,
         infinite: true,
@@ -20,7 +21,7 @@ const SliderSection = ({sliderData}) => {
                         {sliderData?.map((item, index) => (
                             <div
                                 className={styles.slider__kit}
-                                key={item.desrc}
+                                key={index}
                             >
                                 <div className={styles.slider__image}>
                                     <Image

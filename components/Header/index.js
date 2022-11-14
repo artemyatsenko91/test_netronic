@@ -4,12 +4,11 @@ import NavMenu from './NavMenu';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const Header = ({ logo, linkNames }) => {
-    const [menuActive, setMenuActive] = useState(false)
+const Header = ({ logo, linkNames, phoneIcon }) => {
+    const [openBurgerMenu, setOpenBurgerMenu] = useState(false)
 
     const handleToggle = () => {
-        setMenuActive(!menuActive);
-        console.log(styles);
+        setOpenBurgerMenu(!openBurgerMenu);
     }
 
     return (
@@ -26,14 +25,14 @@ const Header = ({ logo, linkNames }) => {
                     <div
                         onClick={handleToggle}
                         className={
-                            menuActive
+                            openBurgerMenu
                                 ? styles.header__burger_active
                                 : styles.header__burger}
                     />
                     <NavMenu
                         linkNames={linkNames}
-                        active={menuActive}
-                        setMenuActive={setMenuActive}
+                        active={openBurgerMenu}
+                        phoneIcon={phoneIcon}
                     />
                 </div>
             </div>

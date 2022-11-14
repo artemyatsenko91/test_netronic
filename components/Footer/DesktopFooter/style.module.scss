@@ -40,27 +40,5 @@
     &__nav {
         display: flex;
         justify-content: center;
-
-        .nav_link {
-            margin-top: 25px;
-            list-style: none;
-            margin-right: 16px;
-
-            a {
-                @include ManropeMedium;
-
-                font-size: 9px;
-                line-height: 11px;
-                color: $grey-color;
-            }
-
-            &:last-child {
-                margin-right: 0;
-            }
-
-            &:hover {
-                text-decoration: underline;
-            }
-        }
     }
 }

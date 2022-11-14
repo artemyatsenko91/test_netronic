@@ -1,4 +1,4 @@
-const SocialNetworksData = [
+const socialNetworksData = [
     {
         url: 'https://www.facebook.com/HRnetronic/',
         icon: 'fa-square-facebook'
@@ -21,7 +21,7 @@ const SocialNetworksData = [
     },
 ]
 
-const SliderData = [
+const sliderData = [
     {
         title: (
             <>
@@ -100,7 +100,7 @@ const SliderData = [
     },
 ]
 
-const LinkNames = [
+const linkNames = [
     {
         text: 'Оборудование'
     },
@@ -121,7 +121,7 @@ const LinkNames = [
     },
 ]
 
-const FeedBackInfoData = [
+const feedBackInfoData = [
     {
         field_name: 'Email',
         field_value: 'info@lasertag.**',
@@ -148,8 +148,15 @@ const FeedBackInfoData = [
     },
 ]
 
-// export default LinkNames;
-// export default MessangersData;
-// export default sliderData;
+const footerMenuLinksData = [
+    {
+        url: '#',
+        name: 'Политика конфиденциальности',
+    },
+    {
+        url: '#',
+        name: 'Карта сайта',
+    },
+]
 
-export { SocialNetworksData, SliderData, LinkNames, FeedBackInfoData };
+export { socialNetworksData, sliderData, linkNames, feedBackInfoData, footerMenuLinksData };
