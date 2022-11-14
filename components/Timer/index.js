@@ -1,20 +1,24 @@
 import styles from './style.module.scss';
-import CountDown from './Countdown';
+import dynamic from 'next/dynamic';
+const CountDown = dynamic(() => import('./Countdown'), {
+    ssr: false,
+});
 
-const TimerSection = (props) => {
+const DiscountTimer = (props) => {
     return (
         <section className={styles.timer}>
             <div className={styles.timer__wrapper}>
-                <div className="container">
-                    <h2 className={styles.timer__title}>
-                        {props.title}
-                    </h2>
-                    {/* <CountDown date={props.date} textAfterDigits={props.textAfterDigits}/> */}
-                    <button className="btn btn_timer">{props.btn_text}</button>
+                <div className='container'>
+                    <h2 className={styles.timer__title}>{props.title}</h2>
+                    <CountDown
+                        date={props.date}
+                        textAfterDigits={props.textAfterDigits}
+                    />
+                    <button className='btn btn_timer'>{props.btn_text}</button>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default TimerSection;
+export default DiscountTimer;

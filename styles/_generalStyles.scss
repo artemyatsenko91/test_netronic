@@ -108,22 +108,17 @@ $slick-opacity-not-active: 0.25 !default;
     padding: 0;
     border: none;
     outline: none;
-
-    &:hover,
-    &:focus {
+    &:hover, &:focus {
         outline: none;
         background: transparent;
         color: transparent;
-
         &:before {
             opacity: $slick-opacity-on-hover;
         }
     }
-
     &.slick-disabled:before {
         opacity: $slick-opacity-not-active;
     }
-
     &:before {
         font-family: $slick-font-family;
         font-size: 20px;
@@ -137,15 +132,12 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev {
     left: -25px;
-
     [dir="rtl"] & {
         left: auto;
         right: -25px;
     }
-
     &:before {
         content: $slick-prev-character;
-
         [dir="rtl"] & {
             content: $slick-next-character;
         }
@@ -154,15 +146,12 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-next {
     right: -25px;
-
     [dir="rtl"] & {
         left: -25px;
         right: auto;
     }
-
     &:before {
         content: $slick-next-character;
-
         [dir="rtl"] & {
             content: $slick-prev-character;
         }
@@ -228,8 +217,8 @@ $slick-opacity-not-active: 0.25 !default;
                 font-size: $slick-dot-size;
                 line-height: 20px;
                 text-align: center;
-                color: $slick-dot-color;
-                opacity: $slick-opacity-not-active;
+                color: #C4C4C4;
+                opacity: 1;
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
             }
@@ -237,52 +226,101 @@ $slick-opacity-not-active: 0.25 !default;
 
         &.slick-active button:before {
             color: $slick-dot-color-active;
-            opacity: 1;
+            opacity: .8;
         }
     }
 }
 
 /* Custom styles slider */
-.slick-prev,
-.slick-next {
-    height: 50px;
-    width: 50px;
-    top: 30%;
 
-    @include lt-lg {
-        top: auto;
-        bottom: 5px;
-    }
+// .slick-prev,
+// .slick-next {
+//     height: 50px;
+//     width: 50px;
+//     top: 30%;
 
-    @include lt-xs {
-        top: auto;
-        bottom: 25px;
-    }
+//     @include lt-lg {
+//         top: auto;
+//         bottom: 5px;
+//     }
 
-    &:before {
-        font-size: 50px;
-    }
-}
+//     @include lt-xs {
+//         top: auto;
+//         bottom: 25px;
+//     }
 
-.slider__content {
-    .slick-prev {
-        left: -50px;
+//     &:before {
+//         font-size: 50px;
+//     }
+// }
 
-        @include lt-lg {
-            z-index: 100;
-            left: 43px;
-        }
-    }
+// .slider__content {
+//     .slick-prev {
+//         left: -50px;
+//         background: url('../public/images/icons/arrow-left.svg');
 
-    .slick-next {
-        right: -50px;
+//         @include lt-lg {
+//             z-index: 100;
+//             left: 43px;
+//         }
 
-        @include lt-lg {
-            z-index: 100;
-            right: 43px;
-        }
-    }
-}
+//         &:before {
+//             content: $slick-prev-character;
+//             [dir="rtl"] & {
+//                 content: $slick-next-character;
+//             }
+//         }
+//     }
+
+//     .slick-next {
+//         right: -50px;
+
+//         @include lt-lg {
+//             z-index: 100;
+//             right: 43px;
+//         }
+//     }
+// }
+// .slick-prev,
+// .slick-next {
+//     height: 50px;
+//     width: 50px;
+//     top: 30%;
+
+//     @include lt-lg {
+//         top: auto;
+//         bottom: 5px;
+//     }
+
+//     @include lt-xs {
+//         top: auto;
+//         bottom: 25px;
+//     }
+
+//     &:before {
+//         font-size: 50px;
+//     }
+// }
+
+// .slider__content {
+//     .slick-prev {
+//         left: 85%;
+
+//         @include lt-lg {
+//             z-index: 10;
+//             left: -430px;
+//         }
+//     }
+
+//     .slick-next {
+//         right: -50px;
+
+//         @include lt-lg {
+//             z-index: 10;
+//             left: 43px;
+//         }
+//     }
+// }
 
 .slick-dots {
     width: 49px;

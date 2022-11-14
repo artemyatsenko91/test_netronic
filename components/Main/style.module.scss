@@ -5,6 +5,7 @@
 .main {
     background-color: $bg-color-dark;
     padding: 85px 15px 133px;
+    overflow-x: hidden;
 
     @include lt-xs {
         padding: 85px 15px 177px;
@@ -53,6 +54,11 @@
             height: 304px;
             border-radius: 0;
         }
+    }
+
+    &__img {
+        object-fit: cover;
+        object-position: 70% 50%;
     }
 
     &__descr {
